@@ -1,0 +1,307 @@
+.userpicture {
+    vertical-align: middle;
+}
+
+.mod-programming .maincontent,
+.mod-programming-reports .maincontent,
+.blocks-programming_standing .maincontent {
+	text-align: center;
+    padding: 4px;
+}
+.mod-programming .maincontent table { margin: auto; }
+.mod-programming .maincontent td { padding: 3px; }
+.mod-programming .cell { vertical-align: middle; } 
+
+#mod-programming-view #description { text-align: left; padding: 0em 1em 0em 1em; }
+#mod-programming-view #presetcode { text-align: left; padding: 0em 1em 0em 1em; }
+#mod-programming-view #presetcode pre { background-color: #eeeeee; padding: 0em 0.5em 0em 2.5em; }
+#mod-programming-view #testcase-table { padding: 1em; }
+#mod-programming-view #time-table th { text-align: right }
+#mod-programming-view #time-table td { text-align: left }
+
+.compilemessage {
+  width: 52em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Consolas","Courier New",Courier,mono,serif;
+  font-weight: bold;
+  text-align: left;
+}
+.compilemessage ol {
+  list-style-type: none;
+}
+.compilemessage li, .compilemessage li.warning,
+.compilemessage li.normal, .compilemessage li.error {
+  font-family: "Consolas","Courier New",Courier,mono,serif;
+  font-style: normal;
+  font-weight: bold;
+}
+.compilemessage li.warning {
+  color: black;
+}
+.compilemessage li.normal {
+  color: blue;
+}
+.compilemessage li.error {
+  color: #800000;
+}
+
+#test-result-detail .passed,
+#test-result-detail .passed .cell {
+    background-color: #A0EEA0; /* light green */
+}
+#test-result-detail .notpassed,
+#test-result-detail .notpassed .cell {
+    background-color: #F0A0A0; /* light red */
+}
+
+#programming-standing-full-standing, #standing-result {
+    text-align: center
+}
+
+#mod-programming-history td { vertical-align: top; }
+#mod-programming-history #submitlist {
+    display: block;
+    width: 14em;
+}
+#mod-programming-history #submitlist table {
+    margin: 0.5em 0;
+}
+
+#mod-programming-submit #codeview {
+    display: block;
+    width: 46em;
+    height: 29em;
+    text-align: left;
+    overflow: scroll;
+    margin: auto;
+}
+#mod-programming-history #codeview {
+    display: block;
+    width: 46em;
+    height: 29em;
+    text-align: left;
+    overflow: scroll;
+}
+
+.diff {
+    margin: 0 auto;
+    width: 52em;
+}
+
+.diff th {
+    color: #666666;
+    font-weight: normal;
+    padding: 0 0.6em;
+    text-align: right;
+    width: 2em;
+}
+
+.diff td {
+    font-family: "Consolas","Courier New",Courier,mono,serif;
+}
+
+.diff .added {
+    background-color: #99FF99;
+    border-color: #33AA33;
+    border-style: solid;
+    border-width: 0 1px;
+}
+
+.diff .deleted {
+    background-color: #FF8888;
+    border-color: #AA3333;
+    border-style: solid;
+    border-width: 0 1px;
+}
+
+.diff .first {
+    border-top-width: 1px;
+}
+
+.diff .last {
+    border-bottom-width: 1px;
+}
+
+.diff .added-changed {
+    background-color: #DDF8CC;
+    border-color: #33AA33;
+    border-style: solid;
+    border-width: 0 1px;
+}
+
+.diff .deleted-changed {
+    background-color: #FFD8D8;
+    border-color: #AA3333;
+    border-style: solid;
+    border-width: 0 1px;
+}
+
+#mod-programming-resemble_compare #info { padding-bottom: 1em; }
+#mod-programming-resemble_compare #program {
+    text-align: left;
+    height: 30em;
+}
+#mod-programming-resemble_compare #program #submit1{
+    width: 48%;
+    float: left;
+    overflow: scroll;
+    height: 30em;
+}
+#mod-programming-resemble_compare #program #submit2{
+    width: 48%;
+    float: right;
+    overflow: scroll;
+    height: 30em;
+}
+#mod-programming-resemble_compare .code {
+    font-family: monospace;
+    background-color: #e7e7e7;
+}
+#mod-programming-resemble_compare .match1 { color: Red; }
+#mod-programming-resemble_compare .match2 { color: BlueViolet; }
+#mod-programming-resemble_compare .match3 { color: Brown; }
+#mod-programming-resemble_compare .match4 { color: BurlyWood; }
+#mod-programming-resemble_compare .match5 { color: CadetBlue; }
+#mod-programming-resemble_compare .match6 { color: DarkGoldenRod; }
+#mod-programming-resemble_compare .match7 { color: Chocolate; }
+#mod-programming-resemble_compare .match8 { color: DarkGreen; }
+
+.resemble-list .warned { color: orange; }
+.resemble-list .confirmed { color: red; }
+.resemble-list .flag3 { color: #888888; }
+
+.reports, .reports table {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#mod-programming-reports-detail .maincontent .mform div,
+#mod-programming-reports-detail .maincontent .mform select {
+    display: inline;
+}
+
+#mod-programming-reports-detail .maincontent .mform .fitemtitle,
+#mod-programming-reports-detail .maincontent .mform div.felement,
+#mod-programming-reports-detail .maincontent .mform fieldset.felement {
+    float: none;
+}
+
+#mod-programming-reports-best .maincontent .maincontent2 {
+    margin: 0 220px;
+}
+
+.mod-programming-reports .maincontent2 .generaltable {
+    width: 100%;
+}
+
+#mod-programming-reports-judgeresultchart .maincontent .mform,
+#mod-programming-reports-best .maincontent .mform {
+    width: 220px;
+    float: right;
+}
+
+.noticebox {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #FFAAAA;
+    width: 60%;
+}
+
+.programming-io a {
+    font-size: 9pt;
+}
+
+.programming-io div {
+    vertical-align: top;
+    padding: 0px 5px 0px 0px;
+    width: 10em;
+    height: 10em;
+    overflow: auto;
+}
+
+.programming-io ol {
+    text-align: left;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: 0 0 0 auto;
+    overflow: visible;
+}
+
+.programming-io li {
+    font-family: "Consolas","Courier New",Courier,mono,serif;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+
+.programming-io span {
+    background-color: #D3D3D3;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.hl-default {
+    color: Black;
+}
+.hl-code {
+    color: Gray;
+}
+.hl-brackets {
+    color: Olive;
+}
+.hl-comment {
+    color: Orange;
+}
+.hl-quotes {
+    color: Darkred;
+}
+.hl-string {
+    color: Red;
+}
+.hl-identifier {
+    color: Blue;
+}
+.hl-builtin {
+    color: Teal;
+}
+.hl-reserved {
+    color: Green;
+}
+.hl-inlinedoc {
+    color: Blue;
+}
+.hl-var {
+    color: Darkblue;
+}
+.hl-url {
+    color: Blue;
+}
+.hl-special {
+    color: Navy;
+}
+.hl-number {
+    color: Maroon;
+}
+.hl-inlinetags {
+    color: Blue;
+}
+.hl-main { 
+    background-color: White;
+}
+.hl-gutter {
+    background-color: #999999;
+    color: White
+}
+.hl-table {
+    font-family: "Consolas","Courier New",Courier,mono,serif;
+    font-size: 12px;
+    border: solid 1px Lightgrey;
+}
+.dp-highlighter li {
+    font-family: "Consolas","Courier New",Courier,mono,serif;
+}
