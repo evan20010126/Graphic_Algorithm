@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0069)https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/view.php?id=63283 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<link rel="stylesheet" type="text/css" href="./1111 圖論演算法_ Convenient transportation_files/styles.php">
+<link rel="stylesheet" type="text/css" href="./1111 圖論演算法_ Convenient transportation_files/styles(1).php">
+<link rel="stylesheet" type="text/css" href="./1111 圖論演算法_ Convenient transportation_files/SyntaxHighlighter.css">
+<link rel="stylesheet" type="text/css" href="./1111 圖論演算法_ Convenient transportation_files/programming.css">
+<script type="text/javascript" src="./1111 圖論演算法_ Convenient transportation_files/jquery-latest.pack.js.下載"></script>
+<script type="text/javascript" src="./1111 圖論演算法_ Convenient transportation_files/shCore.js.下載"></script>
+<script type="text/javascript" src="./1111 圖論演算法_ Convenient transportation_files/shBrushCSharp.js.下載"></script>
+<script type="text/javascript" src="./1111 圖論演算法_ Convenient transportation_files/view.js.下載"></script>
+
+<!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="https://e-tutor.itsa.org.tw/e-Tutor/theme/standard/styles_ie7.css" />
+<![endif]-->
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="https://e-tutor.itsa.org.tw/e-Tutor/theme/standard/styles_ie6.css" />
+<![endif]-->
+<!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="https://e-tutor.itsa.org.tw/e-Tutor/theme/custom_corners/styles_ie7.css" />
+<![endif]-->
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="https://e-tutor.itsa.org.tw/e-Tutor/theme/custom_corners/styles_ie6.css" />
+<![endif]-->
+
+
+        <link href="./1111 圖論演算法_ Convenient transportation_files/css" rel="stylesheet">
+    <meta name="keywords" content="ITSA,教育部,智慧創新跨域人才培育計畫,線上課程資源,資訊人才,e-Tutor,1111 圖論演算法: Convenient transportation ">
+    <title>1111 圖論演算法: Convenient transportation</title>
+    <link rel="shortcut icon" href="https://e-tutor.itsa.org.tw/e-Tutor/theme/e-tutor/favicon.ico">
+    <script type="text/javascript" src="./1111 圖論演算法_ Convenient transportation_files/jquery.min.js.下載"></script>
+   <!--<style type="text/css">/*<![CDATA[*/ body{behavior:url(https://e-tutor.itsa.org.tw/e-Tutor/lib/csshover.htc);} /*]]>*/</style>-->
+
+<script type="text/javascript" src="./1111 圖論演算法_ Convenient transportation_files/javascript-static.js.下載"></script>
+<script type="text/javascript" src="./1111 圖論演算法_ Convenient transportation_files/javascript-mod.php"></script>
+<script type="text/javascript" src="./1111 圖論演算法_ Convenient transportation_files/overlib.js.下載"></script>
+<script type="text/javascript" src="./1111 圖論演算法_ Convenient transportation_files/overlib_cssstyle.js.下載"></script>
+<script type="text/javascript" src="./1111 圖論演算法_ Convenient transportation_files/cookies.js.下載"></script>
+<script type="text/javascript" src="./1111 圖論演算法_ Convenient transportation_files/ufo.js.下載"></script>
+<script type="text/javascript" src="./1111 圖論演算法_ Convenient transportation_files/dropdown.js.下載"></script>  
+
+<script type="text/javascript" defer="defer">
+//<![CDATA[
+setTimeout('fix_column_widths()', 20);
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+function openpopup(url, name, options, fullscreen) {
+    var fullurl = "https://e-tutor.itsa.org.tw/e-Tutor" + url;
+    var windowobj = window.open(fullurl, name, options);
+    if (!windowobj) {
+        return true;
+    }
+    if (fullscreen) {
+        windowobj.moveTo(0, 0);
+        windowobj.resizeTo(screen.availWidth, screen.availHeight);
+    }
+    windowobj.focus();
+    return false;
+}
+
+function uncheckall() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = false;
+    }
+}
+
+function checkall() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = true;
+    }
+}
+
+function inserttext(text) {
+  text = ' ' + text + ' ';
+  if ( opener.document.forms['theform'].message.createTextRange && opener.document.forms['theform'].message.caretPos) {
+    var caretPos = opener.document.forms['theform'].message.caretPos;
+    caretPos.text = caretPos.text.charAt(caretPos.text.length - 1) == ' ' ? text + ' ' : text;
+  } else {
+    opener.document.forms['theform'].message.value  += text;
+  }
+  opener.document.forms['theform'].message.focus();
+}
+
+function getElementsByClassName(oElm, strTagName, oClassNames){
+	var arrElements = (strTagName == "*" && oElm.all)? oElm.all : oElm.getElementsByTagName(strTagName);
+	var arrReturnElements = new Array();
+	var arrRegExpClassNames = new Array();
+	if(typeof oClassNames == "object"){
+		for(var i=0; i<oClassNames.length; i++){
+			arrRegExpClassNames.push(new RegExp("(^|\\s)" + oClassNames[i].replace(/\-/g, "\\-") + "(\\s|$)"));
+		}
+	}
+	else{
+		arrRegExpClassNames.push(new RegExp("(^|\\s)" + oClassNames.replace(/\-/g, "\\-") + "(\\s|$)"));
+	}
+	var oElement;
+	var bMatchesAll;
+	for(var j=0; j<arrElements.length; j++){
+		oElement = arrElements[j];
+		bMatchesAll = true;
+		for(var k=0; k<arrRegExpClassNames.length; k++){
+			if(!arrRegExpClassNames[k].test(oElement.className)){
+				bMatchesAll = false;
+				break;
+			}
+		}
+		if(bMatchesAll){
+			arrReturnElements.push(oElement);
+		}
+	}
+	return (arrReturnElements)
+}
+//]]>
+</script>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+    var CSSClass={};CSSClass.is=function(e,c){if(typeof e=="string")e=document.getElementById(e);var classes=e.className;if(!classes)return false;if(classes==c)return true;return e.className.search("\\b"+c+"\\b")!=-1;};CSSClass.add=function(e,c){if(typeof e=="string")e=document.getElementById(e);if(CSSClass.is(e,c))return;if(e.className)c=" "+c;e.className+=c;};CSSClass.remove=function(e,c){if(typeof e=="string")e=document.getElementById(e);e.className=e.className.replace(new RegExp("\\b"+c+"\\b\\s*","g"),"");};
+    
+    var script = {
+        corrections: function () {
+            if (top.user) {
+                top.document.getElementsByTagName('frameset')[0].rows = "117,30%,0,200";
+            }
+            
+            // check for layouttabel and add layouttable classes to body
+            var tagname = 'nolayouttable';
+            if (document.getElementById('middle-column')) {
+                var lc = document.getElementById('left-column');
+                var rc = document.getElementById('right-column');
+                if ( lc && rc ) {
+                    tagname = 'haslayouttable rightandleftcolumn';
+                } else if (lc) {
+                    tagname = 'haslayouttable onlyleftcolumn';
+                } else if (rc) {
+                    tagname = 'haslayouttable onlyrightcolumn';
+                } else {
+                    tagname = 'haslayouttable onlymiddlecolumn';
+                }
+            }
+            
+            function setbodytag (tagname) {
+                var bd = document.getElementsByTagName('body')[0];
+                if (bd) {
+                    CSSClass.add(bd, tagname);
+                } else {
+                    setTimeout(function() { setbodytag(tagname) }, 30);
+                }
+            }
+            
+            setTimeout(function() { setbodytag(tagname) }, 30);
+        },
+        
+        init: function() {
+            script.corrections();
+        }
+    };
+/* ]]> */
+</script><script type="text/javascript">
+/*
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24628312-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+*/
+</script>
+
+</head>
+
+<body class="mod-programming course-2734 dir-ltr lang-zh_tw_utf8 notinpopup nolayouttable" id="mod-programming-view">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td align="center">
+
+        
+<div id="page">
+
+  <div id="logoscyt2" style="text-align:right;">&nbsp;&nbsp;	您以 <a href="https://e-tutor.itsa.org.tw/e-Tutor/user/view.php?id=113414">秉宸 00957202吳</a> 身分登入 (<a href="https://e-tutor.itsa.org.tw/e-Tutor/login/logout.php?sesskey=jfFYH3H1vZ">登出</a>)
+    (<a href="https://portal.itsa.org.tw/">前往單一登入網站</a>)
+	</div>
+   <div id="logoscyt"> <div id="logomeducacion"> <div class="headermenu"></div></div></div> 
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+    <td bgcolor="#DDD" height="1"></td>
+  </tr>
+  <tr bgcolor="#FFF">
+    <td align="center">
+	<div style="display:none;">/e-Tutor/mod/programming/view.php</div>
+	<table width="973" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr style="font-size:18px;">
+    <td align="center" class="top_button_box">首頁<div class="top_button_on" onclick="location.href=&#39;https://e-tutor.itsa.org.tw/e-Tutor&#39;"></div></td>
+    <td align="center" class="top_button_box">線上題庫<div class="top_button_on" onclick="location.href=&#39;https://e-tutor.itsa.org.tw/e-Tutor/Question_bank.php?id=30&#39;"></div>
+	</td>
+    <td align="center" class="top_button_box" style="color: rgb(244, 136, 35);">老師專區<div class="top_button_on" onclick="location.href=&#39;https://e-tutor.itsa.org.tw/e-Tutor/Teacher_bank.php&#39;" style="display: none; color: rgb(0, 0, 0);"></div>
+	</td>
+    <td align="center" class="top_button_box">關於平臺<div class="top_button_on" onclick="location.href=&#39;https://e-tutor.itsa.org.tw/e-Tutor/about.php&#39;"></div></td>
+	  <td align="center" class="top_button_box" width="200" style="color: rgb(244, 136, 35);">程式能力線上自我評量<div class="top_button_on" onclick="location.href=&#39;https://e-tutor.itsa.org.tw/e-Tutor/itsaojcontest/index.php&#39;" style="display: none; color: rgb(0, 0, 0);"></div></td>
+    <td align="center" width="284" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+</tbody></table>
+</td>
+  </tr>
+<tr>
+    <td bgcolor="#DDD" height="1"></td>
+  </tr>
+<tr>
+    <td bgcolor="#FFF" height="30" style="padding-left:5px;" align="center" valign="middle"><div class="breadcrumb">
+            <div class="breadcrumb" style="font-size:14px;text-align: left;"><h2 class="accesshide ">您位於</h2> <ul>
+<li class="first"><a onclick="this.target=&#39;_top&#39;" href="https://e-tutor.itsa.org.tw/e-Tutor/">E-tutor</a></li><li> <span class="accesshide ">/&nbsp;</span><span class="arrow sep">►</span> <a onclick="this.target=&#39;_top&#39;" href="https://e-tutor.itsa.org.tw/e-Tutor/course/view.php?id=2734">1111 圖論演算法</a></li><li> <span class="accesshide ">/&nbsp;</span><span class="arrow sep">►</span> <a onclick="this.target=&#39;_top&#39;" href="https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/index.php?id=2734">程式練習</a></li><li> <span class="accesshide ">/&nbsp;</span><span class="arrow sep">►</span> <a onclick="this.target=&#39;_top&#39;" href="https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/view.php?id=63283">Convenient transportation</a></li><li> <span class="accesshide ">/&nbsp;</span><span class="arrow sep">►</span> 查看</li></ul></div>
+            <div class="navbutton" style="text-align:center;">&nbsp;</div>
+            </div></td>
+  </tr>
+<tr>
+    <td bgcolor="#DDD" height="1"></td>
+  </tr>
+</tbody></table>
+
+
+<script>
+$("#chooselang").hide();
+
+
+</script>
+    <!-- END OF HEADER -->
+<script>
+$(".top_button_box").hover(
+  function() {
+    $(this).children("div").show();
+	$(this).css("color","#F00");
+	$(this).children("div").css("color","#000");
+  }, function() {
+     $(this).children("div").hide();
+	 $(this).css("color","#f48823");
+	 $(this).children("div").css("color","#000");
+  }
+  
+);
+
+$(".top_sub_menu").hover(
+  function() {
+	$(this).css("color","#F00");
+  }, function() {
+	 $(this).css("color","#000");
+  }
+  
+);
+
+$(".top_sub_menu2").hover(
+  function() {
+	$(this).css("color","#F00");
+  }, function() {
+	 $(this).css("color","#999");
+  }
+  
+);
+
+
+</script>
+<!-- start container Content -->
+<table width="1160" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr bgcolor="#FFF">
+    <td>
+
+
+
+<div class="tabtree">
+<ul class="tabrow0">
+<li class="first onerow here selected"><a href="https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/view.php?a=38196" title="查看"><span>查看</span></a><div class="tabrow1 empty">&nbsp;</div>
+ </li>
+<li><a href="https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/new_submit2.php?a=38196" title="提交(新Judge)"><span>提交(新Judge)</span></a> </li>
+<li><a href="https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/result.php?a=38196" title="结果"><span>结果</span></a> </li>
+<li><a href="https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/history.php?a=38196" title="提交的歷史資訊"><span>提交的歷史資訊</span></a> </li>
+<li><a href="https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/reports/summary.php?a=38196" title="報表"><span>報表</span></a> </li>
+<li class="last"><a href="https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/resemble_view.php?a=38196" title="相似度"><span>相似度</span></a> </li>
+</ul>
+</div><div class="clearer"> </div>
+
+<div class="maincontent generalbox">
+
+<h1 class="name">Convenient transportation</h1>
+
+<div class="grade">成績: 0 / 倒扣: 0.8</div>
+
+<div id="description">
+<p style="box-sizing: border-box; margin: 0px 0px 10px;"><span style="font-size: 14px;"><span style="font-family: 微軟正黑體;"><span style="color: rgb(0, 0, 0);"><strong>問題敘述</strong></span></span></span><br>
+番薯國有 n 個城市，我們對兩個城市 x , y 建一條通道代表說，可以從城市 x 到城市 y，也可以從城市 y 到城市 x。<br>
+我們定義番薯國的交通方便度，代表說有幾組城市間可以到達，換言之就是有幾組 (x,y) 使得城市 x 可以到達城市 y (其中 x != y)。<br>
+一開始番薯國是個荒涼之地，城市之間並沒有任何通道，此時番薯國的市長有 m 條交通建設計畫，每一條計畫裡都有 x<sub>i</sub>&nbsp;, y<sub>i</sub>&nbsp;代表把所有城市 k , k+1，之間建一條通道 ( x<sub>i<span style="font-size: 13px;">&nbsp;&nbsp;</span></sub><span style="color: rgb(0, 0, 0); font-family: 微軟正黑體; font-size: 14px;">≤</span>&nbsp;k &lt; y<sub>i</sub>)。<br>
+現在市長想知道在每次交通建設計畫後，番薯國的交通方便度是多少，希望你能幫幫他。<br>
+<br>
+<span style="font-size: 14px;"><span style="font-family: 微軟正黑體;"><span style="color: rgb(0, 0, 0);"><strong>輸入說明</strong><br>
+第一行有兩個整數 n , m，接下來有 m 行，每行有兩個整數 x<sub>i</sub>&nbsp;,&nbsp;y<sub>i</sub>&nbsp;代表一個交通建設的方案</span></span></span></p>
+
+<ul>
+	<li style="box-sizing: border-box; margin: 0px 0px 10px;"><span style="font-family: 微軟正黑體;"><span style="color: rgb(0, 0, 0);"><span style="font-size: 14px;">1 ≤ n&nbsp;≤&nbsp;10<sup>6&nbsp;</sup>,&nbsp;</span></span></span><span style="color: rgb(0, 0, 0); font-family: 微軟正黑體; font-size: 14px;">1 ≤ m&nbsp;≤ 10</span><sup style="color: rgb(0, 0, 0); font-family: 微軟正黑體;">5</sup></li>
+	<li style="box-sizing: border-box; margin: 0px 0px 10px;"><span style="font-family: 微軟正黑體;"><span style="color: rgb(0, 0, 0);"><span style="font-size: 14px;">1 ≤ x<sub>i</sub>&nbsp;, y<sub>i</sub>&nbsp;≤ n</span></span></span><sup style="color: rgb(0, 0, 0); font-family: 微軟正黑體;">&nbsp;</sup>&nbsp;,&nbsp;<span style="color: rgb(0, 0, 0); font-family: 微軟正黑體; font-size: 14px;">x</span><sub style="color: rgb(0, 0, 0); font-family: 微軟正黑體;">i</sub><span style="color: rgb(0, 0, 0); font-family: 微軟正黑體; font-size: 14px;">&nbsp;&lt;&nbsp;y</span><sub style="color: rgb(0, 0, 0); font-family: 微軟正黑體;">i&nbsp;</sub>, for all i</li>
+</ul>
+
+<div style="box-sizing: border-box; margin: 0px 0px 10px;">&nbsp;</div>
+
+<p style="box-sizing: border-box; margin: 0px 0px 10px;"><br>
+<span style="font-size: 14px;"><span style="font-family: 微軟正黑體;"><span style="color: rgb(0, 0, 0);"><strong>輸出說明</strong><br>
+輸出 m 行，每行一個整數，代表完成該條交通建設計畫後的交通方便度&nbsp;</span></span></span><span style="font-size: 14px;"><span style="font-family: 微軟正黑體;"><span style="color: rgb(0, 0, 0);">。</span></span></span></p><br></div>
+
+
+<div id="testcase-table">
+<table class="generaltable">
+  <tbody><tr>
+    <th>&nbsp;</th>
+	<th>輸入測試資料<span class="helplink"><a title="input 的輔助 (新視窗)" href="https://e-tutor.itsa.org.tw/e-Tutor/help.php?module=programming&amp;file=input.html&amp;forcelang=" onclick="this.target=&#39;popup&#39;; return openpopup(&#39;/help.php?module=programming&amp;file=input.html&amp;forcelang=&#39;, &#39;popup&#39;, &#39;menubar=0,location=0,scrollbars,resizable,width=500,height=400&#39;, 0);"><img class="iconhelp" alt="input 的輔助 (新視窗)" src="./1111 圖論演算法_ Convenient transportation_files/help.gif"></a></span></th>
+	<th>輸出測試資料<span class="helplink"><a title="expectedoutput 的輔助 (新視窗)" href="https://e-tutor.itsa.org.tw/e-Tutor/help.php?module=programming&amp;file=expectedoutput.html&amp;forcelang=" onclick="this.target=&#39;popup&#39;; return openpopup(&#39;/help.php?module=programming&amp;file=expectedoutput.html&amp;forcelang=&#39;, &#39;popup&#39;, &#39;menubar=0,location=0,scrollbars,resizable,width=500,height=400&#39;, 0);"><img class="iconhelp" alt="expectedoutput 的輔助 (新視窗)" src="./1111 圖論演算法_ Convenient transportation_files/help.gif"></a></span></th>
+	<th>時間限制<span class="helplink"><a title="timelimit 的輔助 (新視窗)" href="https://e-tutor.itsa.org.tw/e-Tutor/help.php?module=programming&amp;file=timelimit.html&amp;forcelang=" onclick="this.target=&#39;popup&#39;; return openpopup(&#39;/help.php?module=programming&amp;file=timelimit.html&amp;forcelang=&#39;, &#39;popup&#39;, &#39;menubar=0,location=0,scrollbars,resizable,width=500,height=400&#39;, 0);"><img class="iconhelp" alt="timelimit 的輔助 (新視窗)" src="./1111 圖論演算法_ Convenient transportation_files/help.gif"></a></span></th>
+	<th>記憶體限制<span class="helplink"><a title="memlimit 的輔助 (新視窗)" href="https://e-tutor.itsa.org.tw/e-Tutor/help.php?module=programming&amp;file=memlimit.html&amp;forcelang=" onclick="this.target=&#39;popup&#39;; return openpopup(&#39;/help.php?module=programming&amp;file=memlimit.html&amp;forcelang=&#39;, &#39;popup&#39;, &#39;menubar=0,location=0,scrollbars,resizable,width=500,height=400&#39;, 0);"><img class="iconhelp" alt="memlimit 的輔助 (新視窗)" src="./1111 圖論演算法_ Convenient transportation_files/help.gif"></a></span></th>
+  </tr>
+
+  <tr>
+    <th>測試用範例 0</th>
+    <td class="programming-io cell">
+    <a href="https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/download_io.php?a=38196&amp;test=119369&amp;type=in&amp;download=0" class="showasplaintext small">以網頁方式顯示</a>	  <div><ol><li><span>5&nbsp;3↵</span></li><li><span>1&nbsp;2↵</span></li><li><span>3&nbsp;5↵</span></li><li><span>2&nbsp;4↵</span></li></ol></div>	</td>
+	<td class="programming-io cell">
+    <a href="https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/download_io.php?a=38196&amp;test=119369&amp;type=out&amp;download=0" class="showasplaintext small">以網頁方式顯示</a>	  <div><ol><li><span>2↵</span></li><li><span>8↵</span></li><li><span>20↵</span></li></ol></div>	</td>
+    <td class="cell">
+	  1秒	</td>
+    <td class="cell">
+	  64M	</td>
+  </tr>
+  <tr>
+    <th>測試用範例 1</th>
+    <td class="programming-io cell">
+    <a href="https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/download_io.php?a=38196&amp;test=119370&amp;type=in&amp;download=0" class="showasplaintext small">以網頁方式顯示</a>	  <div><ol><li><span>7&nbsp;5↵</span></li><li><span>2&nbsp;4↵</span></li><li><span>5&nbsp;6↵</span></li><li><span>5&nbsp;7↵</span></li><li><span>1&nbsp;3↵</span></li><li><span>2&nbsp;6↵</span></li></ol></div>	</td>
+	<td class="programming-io cell">
+    <a href="https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/download_io.php?a=38196&amp;test=119370&amp;type=out&amp;download=0" class="showasplaintext small">以網頁方式顯示</a>	  <div><ol><li><span>6↵</span></li><li><span>8↵</span></li><li><span>12↵</span></li><li><span>18↵</span></li><li><span>42↵</span></li></ol></div>	</td>
+    <td class="cell">
+	  1秒	</td>
+    <td class="cell">
+	  64M	</td>
+  </tr>
+  <tr>
+    <th>測試用範例 2</th>
+    <td class="programming-io cell">
+    <a href="https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/download_io.php?a=38196&amp;test=119371&amp;type=in&amp;download=0" class="showasplaintext small">以網頁方式顯示</a>	  <div><ol><li><span>1000000&nbsp;100000↵</span></li><li><span>499999&nbsp;500001↵</span></li><li><span>499998&nbsp;500002↵</span></li><li><span>499997&nbsp;500003↵</span></li><li><span>499996&nbsp;500004↵</span></li><li><span>499995&nbsp;500005↵</span></li><li><span>499994&nbsp;500006↵</span></li><li><span>499993&nbsp;500007↵</span></li><li><span>499992&nbsp;500008↵</span></li><li><span>499991&nbsp;500009↵</span></li><li><span>499990&nbsp;500010↵</span></li><li><span>499989&nbsp;500011↵</span></li><li><span>499988&nbsp;500012↵</span></li><li><span>499987&nbsp;500013↵</span></li><li><span>499986&nbsp;500014↵</span></li><li><span>499985&nbsp;500015↵</span></li><li><span>499984&nbsp;500016↵</span></li><li><span>499983&nbsp;500017↵</span></li><li><span>499982&nbsp;500018↵</span></li><li><span>499981&nbsp;500019↵</span></li><li><span>499980&nbsp;500020↵</span></li><li><span>499979&nbsp;500021↵</span></li><li><span>499978&nbsp;500022↵</span></li><li><span>499977&nbsp;500023↵</span></li><li><span>499976&nbsp;500024↵</span></li><li><span>499975&nbsp;500025↵</span></li><li><span>499974&nbsp;500026↵</span></li><li><span>499973&nbsp;500027↵</span></li><li><span>499972&nbsp;500028↵</span></li><li><span>499971&nbsp;500029↵</span></li><li><span>499970&nbsp;500030↵</span></li><li><span>499969&nbsp;500031↵</span></li><li><span>499968&nbsp;500032↵</span></li><li><span>499967&nbsp;500033↵</span></li><li><span>499966&nbsp;500034↵</span></li><li><span>499965&nbsp;500035↵</span></li><li><span>499964&nbsp;500036↵</span></li><li><span>499963&nbsp;500037↵</span></li><li><span>499962&nbsp;500038↵</span></li><li><span>499961&nbsp;500039↵</span></li><li><span>499960&nbsp;500040↵</span></li><li><span>499959&nbsp;500041↵</span></li><li><span>499958&nbsp;500042↵</span></li><li><span>499957&nbsp;500043↵</span></li><li><span>499956&nbsp;500044↵</span></li><li><span>499955&nbsp;500045↵</span></li><li><span>499954&nbsp;500046↵</span></li><li><span>499953&nbsp;500047↵</span></li><li><span>499952&nbsp;500048↵</span></li><li><span>499951&nbsp;500049↵</span></li><li><span>499950&nbsp;500050↵</span></li><li><span>499949&nbsp;500051↵</span></li><li><span>499948&nbsp;500052↵</span></li><li><span>499947&nbsp;500053↵</span></li><li><span>499946&nbsp;500054↵</span></li><li><span>499945&nbsp;500055↵</span></li><li><span>499944&nbsp;500056↵</span></li><li><span>499943&nbsp;500057↵</span></li><li><span>499942&nbsp;500058↵</span></li><li><span>499941&nbsp;500059↵</span></li><li><span>499940&nbsp;500060↵</span></li><li><span>499939&nbsp;500061↵</span></li><li><span>499938&nbsp;500062↵</span></li><li><span>499937&nbsp;500063↵</span></li><li><span>499936&nbsp;500064↵</span></li><li><span>499935&nbsp;500065↵</span></li><li><span>499934&nbsp;500066↵</span></li><li><span>499933&nbsp;500067↵</span></li><li><span>499↵</span></li></ol></div>	</td>
+	<td class="programming-io cell">
+    <a href="https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/download_io.php?a=38196&amp;test=119371&amp;type=out&amp;download=0" class="showasplaintext small">以網頁方式顯示</a>	  <div><ol><li><span>6↵</span></li><li><span>20↵</span></li><li><span>42↵</span></li><li><span>72↵</span></li><li><span>110↵</span></li><li><span>156↵</span></li><li><span>210↵</span></li><li><span>272↵</span></li><li><span>342↵</span></li><li><span>420↵</span></li><li><span>506↵</span></li><li><span>600↵</span></li><li><span>702↵</span></li><li><span>812↵</span></li><li><span>930↵</span></li><li><span>1056↵</span></li><li><span>1190↵</span></li><li><span>1332↵</span></li><li><span>1482↵</span></li><li><span>1640↵</span></li><li><span>1806↵</span></li><li><span>1980↵</span></li><li><span>2162↵</span></li><li><span>2352↵</span></li><li><span>2550↵</span></li><li><span>2756↵</span></li><li><span>2970↵</span></li><li><span>3192↵</span></li><li><span>3422↵</span></li><li><span>3660↵</span></li><li><span>3906↵</span></li><li><span>4160↵</span></li><li><span>4422↵</span></li><li><span>4692↵</span></li><li><span>4970↵</span></li><li><span>5256↵</span></li><li><span>5550↵</span></li><li><span>5852↵</span></li><li><span>6162↵</span></li><li><span>6480↵</span></li><li><span>6806↵</span></li><li><span>7140↵</span></li><li><span>7482↵</span></li><li><span>7832↵</span></li><li><span>8190↵</span></li><li><span>8556↵</span></li><li><span>8930↵</span></li><li><span>9312↵</span></li><li><span>9702↵</span></li><li><span>10100↵</span></li><li><span>10506↵</span></li><li><span>10920↵</span></li><li><span>11342↵</span></li><li><span>11772↵</span></li><li><span>12210↵</span></li><li><span>12656↵</span></li><li><span>13110↵</span></li><li><span>13572↵</span></li><li><span>14042↵</span></li><li><span>14520↵</span></li><li><span>15006↵</span></li><li><span>15500↵</span></li><li><span>16002↵</span></li><li><span>16512↵</span></li><li><span>17030↵</span></li><li><span>17556↵</span></li><li><span>18090↵</span></li><li><span>18632↵</span></li><li><span>19182↵</span></li><li><span>19740↵</span></li><li><span>20306↵</span></li><li><span>20880↵</span></li><li><span>21462↵</span></li><li><span>22052↵</span></li><li><span>22650↵</span></li><li><span>23256↵</span></li><li><span>23870↵</span></li><li><span>24492↵</span></li><li><span>25122↵</span></li><li><span>25760↵</span></li><li><span>26406↵</span></li><li><span>27060↵</span></li><li><span>27722↵</span></li><li><span>28392↵</span></li><li><span>29070↵</span></li><li><span>29756↵</span></li><li><span>30450↵</span></li><li><span>31152↵</span></li><li><span>31862↵</span></li><li><span>32580↵</span></li><li><span>33306↵</span></li><li><span>34040↵</span></li><li><span>34782↵</span></li><li><span>35532↵</span></li><li><span>36290↵</span></li><li><span>37056↵</span></li><li><span>37830↵</span></li><li><span>38612↵</span></li><li><span>39402↵</span></li><li><span>40200↵</span></li><li><span>41006↵</span></li><li><span>41820↵</span></li><li><span>42642↵</span></li><li><span>43472↵</span></li><li><span>44310↵</span></li><li><span>45156↵</span></li><li><span>46010↵</span></li><li><span>46872↵</span></li><li><span>47742↵</span></li><li><span>48620↵</span></li><li><span>49506↵</span></li><li><span>50400↵</span></li><li><span>51302↵</span></li><li><span>52212↵</span></li><li><span>53130↵</span></li><li><span>54056↵</span></li><li><span>54990↵</span></li><li><span>55932↵</span></li><li><span>56882↵</span></li><li><span>57840↵</span></li><li><span>58806↵</span></li><li><span>59780↵</span></li><li><span>60762↵</span></li><li><span>61752↵</span></li><li><span>62750↵</span></li><li><span>63756↵</span></li><li><span>64770↵</span></li><li><span>65792↵</span></li><li><span>66822↵</span></li><li><span>67860↵</span></li><li><span>68906↵</span></li><li><span>69960↵</span></li><li><span>71022↵</span></li><li><span>72092↵</span></li><li><span>73170↵</span></li><li><span>74256↵</span></li><li><span>75350↵</span></li><li><span>76452↵</span></li><li><span>77562↵</span></li><li><span>78680↵</span></li><li><span>79806↵</span></li><li><span>80940↵</span></li><li><span>82082↵</span></li><li><span>83232↵</span></li><li><span>84390↵</span></li><li><span>85556↵</span></li><li><span>86730↵</span></li><li><span>87912↵</span></li><li><span>89102↵</span></li><li><span>90300↵</span></li><li><span>91506↵</span></li><li><span>92720↵</span></li><li><span>93942↵</span></li><li><span>95172↵</span></li><li><span>96410↵</span></li><li><span>97656↵</span></li><li><span>9↵</span></li></ol></div>	</td>
+    <td class="cell">
+	  1秒	</td>
+    <td class="cell">
+	  64M	</td>
+  </tr>
+</tbody></table>
+</div>
+
+<div id="time-table">
+<table class="generaltable">
+  <tbody><tr>
+    <th>開始時間</th>
+    <td class="cell">2021年 12月  23日(四.) 00:00</td>
+  </tr>
+  <tr>
+    <th>倒扣時間</th>
+    <td class="cell">2022年 01月  19日(三.) 23:55</td>
+  </tr>
+  <tr>
+    <th>關閉時間</th>
+    <td class="cell">2022年 01月  19日(三.) 23:55</td>
+  </tr>
+</tbody></table>
+
+<p align="center">
+允許遲交:
+否</p>
+
+</div>
+</div>
+</td>
+  </tr>
+</tbody></table>
+<!-- end container Content -->
+<!-- START OF FOOTER -->
+<style>
+.bottom_text{
+	text-decoration:none;
+	color:#65627a;
+	font-size:18px;
+	/*text-shadow:2px 2px #65627a;*/
+	font-family: Arial,'cwTeXYen', Helvetica, sans-serif;
+	font-weight:600;
+}
+.bottom_text:hover{
+	color:#191c52;
+}
+</style>
+<div style="width:100%; border-top:#999 solid 1px;">
+<table width="1160" border="0" cellpadding="0" cellspacing="0">
+   <tbody><tr>
+    <td align="center" valign="top" height="250" style="background-image:url(https://e-tutor.itsa.org.tw/e-Tutor/images/bottom.png);background-repeat: no-repeat;background-size:cover;">
+      <table width="1133" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+        <td>&nbsp;</td>
+        </tr>
+        <tr style="line-height:30px;">
+          <td align="center" valign="top" style="position: relative;" height="53">
+          <div style="position:absolute; z-index:9; color:#FFF; font-size:28px; font-family: &#39;cwTeXYen&#39;, sans-serif;width:100%;"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td align="center" valign="middle" height="50">相關連結</td></tr></tbody></table>
+</div>
+           <div style="position:absolute; z-index:1; width:100%;"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td align="center" valign="middle"><img src="./1111 圖論演算法_ Convenient transportation_files/bottom_button.png" width="150" height="53"></td></tr></tbody></table>
+</div>
+          </td>
+          <td align="center" valign="top" style="position: relative;" height="53">
+          <div style="position:absolute; z-index:9; color:#FFF; font-size:28px; font-family: &#39;cwTeXYen&#39;, sans-serif;width:100%;"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td align="center" valign="middle" height="50">競賽網站</td></tr></tbody></table>
+</div>
+           <div style="position:absolute; z-index:1; width:100%;"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td align="center" valign="middle"><img src="./1111 圖論演算法_ Convenient transportation_files/bottom_button.png" width="150" height="53"></td></tr></tbody></table>
+</div>
+          </td>
+          <td align="center" valign="top" style="position: relative;" height="53">
+          <div style="position:absolute; z-index:9; color:#FFF; font-size:28px; font-family: &#39;cwTeXYen&#39;, sans-serif;width:100%;"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td align="center" valign="middle" height="50">相關平臺</td></tr></tbody></table>
+</div>
+           <div style="position:absolute; z-index:1; width:100%;"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td align="center" valign="middle"><img src="./1111 圖論演算法_ Convenient transportation_files/bottom_button.png" width="150" height="53"></td></tr></tbody></table>
+</div>
+          </td>
+          <td align="center" valign="top" style="position: relative;" height="53">
+          <div style="position:absolute; z-index:9; color:#FFF; font-size:28px; font-family: &#39;cwTeXYen&#39;, sans-serif;width:100%;"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td align="center" valign="middle" height="50">其他資源</td></tr></tbody></table>
+</div>
+           <div style="position:absolute; z-index:1; width:100%;"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td align="center" valign="middle"><img src="./1111 圖論演算法_ Convenient transportation_files/bottom_button.png" width="150" height="53"></td></tr></tbody></table>
+</div>
+          </td>
+        </tr>
+        <tr style="line-height:30px;">
+          <td width="25%" align="center" valign="top">
+          <a href="https://sec.openedu.tw/" target="_blank" style="color:#65627a65627a;" class="bottom_text">軟體工程聯盟</a><br>
+          </td>
+          <td width="23%" align="center" valign="top">
+          <a href="https://e-tutor.itsa.org.tw/ITSAcontest/" target="_blank" style="color:#65627a65627a;" class="bottom_text">ITSA全國大專程式設計極客挑戰賽</a><br>
+          <a href="https://niicc.cilab.csie.ncu.edu.tw/" target="_blank" style="color:#65627a65627a;" class="bottom_text">全國大專校院智慧創新暨跨域整合創作競賽</a><br>
+          <a href="https://cpe.cse.nsysu.edu.tw/" target="_blank" style="color:#65627a65627a;" class="bottom_text">CPE大學程式能力檢定</a><br>
+          </td>
+          <td width="27%" align="center" valign="top">
+          <a href="https://lrs.itsa.org.tw/" target="_blank" style="color:#65627a65627a;" class="bottom_text">教學資源平臺</a><br>
+          <a href="https://css.itsa.org.tw/" target="_blank" style="color:#65627a65627a;" class="bottom_text">創作社群平臺</a><br>
+          </td>
+          <td width="25%" align="center" valign="top">
+          <a href="https://www.facebook.com/ITSA.tw/" target="_blank" style="color:#65627a65627a;" class="bottom_text">ITSA粉絲團</a><br>
+          <a href="https://www.facebook.com/itsancku/" target="_blank" style="color:#65627a65627a;" class="bottom_text">ITSA線上程式自我評量粉絲團</a><br>
+          </td>
+        </tr>
+      </tbody></table></td>
+  </tr>
+</tbody></table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td align="center" valign="middle" height="30" style="background-color:#006;">
+    <table width="1160" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td align="center" valign="middle" height="30" style="color:#FFF">Copyright © 2019 教育部 - 智慧創新跨域人才培育計畫 | 指導單位：教育部 資訊及科技教育司 | 免責聲明。<a href="mailto:contact@itsa.org.tw"><img src="./1111 圖論演算法_ Convenient transportation_files/mail_icon.png" width="20" style="vertical-align: text-top;"></a></td>
+        </tr>
+    </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+
+</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+    script.init();
+/* ]]> */
+</script>
+</div></td>
+  </tr>
+</tbody></table>
+
+
+</body></html>
